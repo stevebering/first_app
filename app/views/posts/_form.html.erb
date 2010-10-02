@@ -1,0 +1,19 @@
+<%= form_for(@post) do |post_form| %>
+  <%= render :partial => 'shared/errors', :locals => { :item => @post } %>
+
+  <div class="field">
+    <%= post_form.label :name %><br />
+    <%= post_form.text_field :name %>
+  </div>
+  <div class="field">
+    <%= post_form.label :title %><br />
+    <%= post_form.text_field :title %>
+  </div>
+  <div class="field">
+    <%= post_form.label :content %><br />
+    <%= post_form.text_area :content %>
+  </div>
+  <div class="actions">
+    <%= post_form.submit %>
+  </div>
+<% end %>

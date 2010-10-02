@@ -1,0 +1,7 @@
+<% div_for post do %>
+	<h2><%= link_to_unless_current post.title, post  %></h2>
+	<%= simple_format post.content %>
+	<p>
+		Posted <b><%= time_ago(post.created_at) %></b> by <b><%= post.name %></b>
+	</p>
+<% end %>

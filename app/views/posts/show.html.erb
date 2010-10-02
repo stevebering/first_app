@@ -1,0 +1,28 @@
+<p id="notice"><%= notice %></p>
+
+<%= render :partial => @post %>
+
+<div>
+  <b>Author:</b>
+  <%= @post.name %>
+</div>
+
+<br />
+
+<%= link_to 'Edit', edit_post_path(@post) %> |
+<%= link_to 'Destroy', @post, :method => :delete, :confirm => "Are you sure?" %> |
+<%= link_to 'See All Posts', posts_path %>
+
+<p />
+
+<fieldset>
+	<legend>Comments:</legend>
+	<div id="comments">
+	<%= render 	:partial => "comments/comment", 
+				:collection => @post.comments %>
+	</div>
+	<%= render "comments/form" %>
+</fieldset>
+
+
+
